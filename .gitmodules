@@ -1,0 +1,6 @@
+[submodule "gm"]
+	path = gm
+	url = https://github.com/GiacomoZheng/gm.git
+[submodule "pygments-gm"]
+	path = backend/pygments_gm
+	url = https://github.com/GiacomoZheng/pygments-gm.git
