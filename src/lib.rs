@@ -23,13 +23,10 @@ impl GmFile for Path {
 
 	fn to_gm_path(&self) -> PathBuf {
 		if self.is_dir() {
-			// eprintln!("{:?}", self.join(".gm"));
-			if self.join(".gm").is_file() {
-				return self.join(".gm")
-			}
+			self.join(".gm")
+		} else {
+			Path::new(&format!("{}{}", self.as_os_str().to_str().unwrap(), ".gm")).to_path_buf()
 		}
-		// eprintln!("{:?}", self.join(".gm"));
-		Path::new(&format!("{}{}", self.as_os_str().to_str().unwrap(), ".gm")).to_path_buf()
 	}
 }
 
